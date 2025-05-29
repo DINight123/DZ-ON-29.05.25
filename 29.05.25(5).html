@@ -1,0 +1,42 @@
+<!-- Задание 4 -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .error {
+            border: 2px solid red; /* Цвет рамки красный */
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <input type="text" id="inputField">
+        <button class="btn" type="button">Отправить</button>
+    </form>
+    <div id="messageContainer"></div>
+
+    <script>
+        const button = document.querySelector('.btn');
+        const inputField = document.getElementById('inputField');
+        const messageContainer = document.getElementById('messageContainer');
+
+        button.addEventListener('click', () => {
+            if (inputField.value.trim() === '') {
+                const errorMessage = document.createElement('h2');
+                errorMessage.textContent = 'Вы не заполнили поле ввода';
+                messageContainer.appendChild(errorMessage);
+                
+                // Добавляем красную рамку к полю ввода
+                inputField.classList.add('error');
+            } else {
+                // Удаляем сообщение, если поле не пустое
+                messageContainer.innerHTML = '';
+                // Убираем красную рамку
+                inputField.classList.remove('error');
+            }
+        });
+    </script>
+</body>
+</html>

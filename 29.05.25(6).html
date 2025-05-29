@@ -1,0 +1,30 @@
+<!-- Задание 5 -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content"></div>
+
+    <script>
+        // 1. Находим элемент div с классом content
+        const contentDiv = document.querySelector('.content');
+
+        // 2. Создаем новый элемент button
+        const button = document.createElement('button');
+
+        // 3. Добавляем текст для кнопки
+        button.textContent = 'Отправить';
+
+        // 4. Добавляем обработчик события на клик
+        button.addEventListener('click', () => {
+            button.textContent = 'Текст отправлен'; // меняем текст на “Текст отправлен”
+        });
+
+        // Добавляем кнопку в div
+        contentDiv.appendChild(button);
+    </script>
+</body>
+</html>
